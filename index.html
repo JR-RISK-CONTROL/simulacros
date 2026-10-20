@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1F2326">
+  <meta name="description" content="Diligenciamiento en campo de la evaluación de simulacros de evacuación: cronometría, lista de chequeo, fotos, firmas, PDF y respaldo JSON.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Simulacros">
+  <title>Evaluación de Simulacro</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Íconos -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 15V3m0 0L7 8m5-5l5 5M4 19h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cam" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-img" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="2" fill="currentColor"/><path d="M21 16l-5-5-9 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 22h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 9v4l3 2M9 2h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14L4 9l5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 9h10a6 6 0 0 1 0 12h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v5M12 18v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 9.5c.3 2 2.5 4.2 4.5 4.5l1-1 1.5.8c-.3 1-1.2 1.5-2 1.4-2.8-.3-5.4-2.9-5.7-5.7-.1-.8.4-1.7 1.4-2l.8 1.5z" fill="currentColor"/></symbol>
+  </svg>
+
+  <header class="appbar">
+    <button class="icon-btn" id="btnBack" hidden aria-label="Volver al inicio"><svg><use href="#i-back"/></svg></button>
+    <div class="appbar-title">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <div>
+        <strong id="appTitle">Evaluación de simulacro</strong>
+        <small id="appSub">Simulacros de evacuación</small>
+      </div>
+    </div>
+    <span class="save-state" id="saveState" aria-live="polite"></span>
+    <button class="icon-btn" id="btnGuide" aria-label="Guía del simulacro"><svg><use href="#i-book"/></svg></button>
+    <button class="icon-btn" id="btnSettings" aria-label="Configuración"><svg><use href="#i-gear"/></svg></button>
+  </header>
+
+  <!-- ============ INICIO ============ -->
+  <main id="viewHome" class="view">
+    <section class="hero">
+      <h1>Evaluaciones de simulacro</h1>
+      <p>Diligencie el formato en campo, aunque no tenga conexión. Al final genere el PDF con fotos y firmas, y envíelo por WhatsApp o correo junto con el respaldo JSON.</p>
+      <div class="hero-actions">
+        <button class="btn primary lg" id="btnNew"><svg><use href="#i-plus"/></svg>Nueva evaluación</button>
+        <label class="btn ghost lg" for="fileImport"><svg><use href="#i-up"/></svg>Importar respaldo</label>
+        <input type="file" id="fileImport" accept=".json,.txt,application/json,text/plain" hidden>
+      </div>
+      <button class="btn ghost" id="btnInstall" hidden>Instalar en el celular</button>
+    </section>
+    <h2 class="list-title">Guardadas en este dispositivo</h2>
+    <div id="evalList" class="eval-list"></div>
+  </main>
+
+  <!-- ============ FORMULARIO ============ -->
+  <main id="viewForm" class="view" hidden>
+    <nav class="steps" id="steps" aria-label="Secciones">
+      <a href="#s1" data-s="1">1 Ficha</a>
+      <a href="#s2" data-s="2">2 Tiempos</a>
+      <a href="#s3" data-s="3">3 Chequeo</a>
+      <a href="#s4" data-s="4">4 Fotos</a>
+      <a href="#s5" data-s="5">5 Hallazgos</a>
+      <a href="#s6" data-s="6">6 Acciones</a>
+      <a href="#s7" data-s="7">7 Firmas</a>
+    </nav>
+
+    <div class="card type-card">
+      <label for="fTipo">Tipo de emergencia</label>
+      <input id="fTipo" data-path="tipoEmergencia" list="dlTipos" autocomplete="off" placeholder="Ej.: Sismo con evacuación">
+      <datalist id="dlTipos"></datalist>
+    </div>
+
+    <!-- 1 -->
+    <section class="card" id="s1">
+      <h2><span class="num">1</span>Ficha de registro de la sede</h2>
+      <div class="grid2">
+        <div class="field"><label for="fSede">Ciudad / Sede</label><input id="fSede" data-path="ficha.ciudadSede" autocomplete="off"></div>
+        <div class="field"><label for="fSala">Sala / Área evaluada</label><input id="fSala" data-path="ficha.sala" autocomplete="off"></div>
+        <div class="field"><label for="fFecha">Fecha del simulacro</label><input id="fFecha" type="date" data-path="ficha.fecha"></div>
+        <div class="field"><label for="fHoraProg">Hora programada de inicio</label><input id="fHoraProg" type="time" data-path="ficha.horaProgramada"></div>
+        <div class="field"><label for="fEval">Evaluador / Observador responsable</label><input id="fEval" data-path="ficha.evaluador" autocomplete="name"></div>
+        <div class="field"><label for="fCargo">Cargo del observador</label><input id="fCargo" data-path="ficha.cargo"></div>
+      </div>
+      <div class="grid3">
+        <div class="field"><label for="fEmp">N° de empleados evacuados</label><input id="fEmp" type="number" inputmode="numeric" min="0" step="1" data-path="ficha.empleados"></div>
+        <div class="field"><label for="fCli">N° de clientes evacuados</label><input id="fCli" type="number" inputmode="numeric" min="0" step="1" data-path="ficha.clientes"></div>
+        <div class="field"><label for="fVis">N° de visitantes / contratistas evacuados</label><input id="fVis" type="number" inputmode="numeric" min="0" step="1" data-path="ficha.visitantes"></div>
+      </div>
+      <div class="total-box">N° total de personas <strong id="totalPersonas">—</strong></div>
+    </section>
+
+    <!-- 2 -->
+    <section class="card" id="s2">
+      <h2><span class="num">2</span>Matriz de control de tiempos (cronometría)</h2>
+      <div class="crono" id="crono">
+        <div class="crono-label" id="cronoLabel">Cronómetro</div>
+        <div class="crono-display" id="cronoDisplay">00:00</div>
+        <div class="crono-hint" id="cronoHint"></div>
+        <button class="btn primary xl" id="cronoNext"><svg><use href="#i-clock"/></svg><span id="cronoNextTxt">Marcar T0</span></button>
+        <div class="crono-tools">
+          <button class="btn ghost-dark sm" id="cronoUndo"><svg><use href="#i-undo"/></svg>Deshacer última marca</button>
+          <button class="btn danger-ghost sm" id="btnSuspend"><svg><use href="#i-alert"/></svg>Emergencia real</button>
+        </div>
+      </div>
+      <div class="suspension" id="suspensionBox" hidden></div>
+      <p class="help">Cada botón registra la hora exacta del celular. También puede escribir o corregir la hora en cada hito.</p>
+      <div id="tiempos" class="hitos"></div>
+      <div class="total-box big">Tiempo total de evacuación (T4 − T0) <strong id="totalEvac">—</strong></div>
+    </section>
+
+    <!-- 3 -->
+    <section class="card" id="s3">
+      <h2><span class="num">3</span>Lista de chequeo operativa</h2>
+      <div id="checklist" class="checklist"></div>
+      <div class="total-box" id="checkSummary"></div>
+    </section>
+
+    <!-- 4 -->
+    <section class="card" id="s4">
+      <h2><span class="num">4</span>Registro fotográfico</h2>
+      <p class="help">Ejemplos: autoprotección (agáchese, cúbrase), evacuación por la ruta, punto de encuentro, conteo del personal. Puede agregar todas las fotos que necesite.</p>
+      <div class="photo-actions">
+        <label class="btn primary" for="fileCam"><svg><use href="#i-cam"/></svg>Tomar foto</label>
+        <input type="file" id="fileCam" accept="image/*" capture="environment" hidden>
+        <label class="btn ghost" for="fileGal"><svg><use href="#i-img"/></svg>Desde galería</label>
+        <input type="file" id="fileGal" accept="image/*" multiple hidden>
+      </div>
+      <div id="photoBusy" class="busy" hidden>Procesando fotos…</div>
+      <datalist id="dlLeyendas"></datalist>
+      <div id="fotos" class="photos"></div>
+    </section>
+
+    <!-- 5 -->
+    <section class="card" id="s5">
+      <h2><span class="num">5</span>Observaciones y hallazgos</h2>
+      <textarea id="fObs" data-path="observaciones" rows="6" placeholder="Describa fortalezas, desviaciones y hallazgos del ejercicio"></textarea>
+    </section>
+
+    <!-- 6 -->
+    <section class="card" id="s6">
+      <h2><span class="num">6</span>Acciones de mejora</h2>
+      <div id="acciones" class="acciones"></div>
+      <button class="btn ghost" id="btnAddAccion"><svg><use href="#i-plus"/></svg>Agregar acción</button>
+    </section>
+
+    <!-- 7 -->
+    <section class="card" id="s7">
+      <h2><span class="num">7</span>Firmas de validación</h2>
+      <div id="firmas" class="firmas"></div>
+      <button class="btn ghost" id="btnAddFirma"><svg><use href="#i-plus"/></svg>Agregar firmante</button>
+    </section>
+
+    <div class="end-space"></div>
+    <div class="bottombar">
+      <button class="btn primary lg block" id="btnExport"><svg><use href="#i-share"/></svg>Generar PDF y enviar</button>
+    </div>
+  </main>
+
+  <!-- ============ MODAL FIRMA ============ -->
+  <div class="modal sig-modal" id="sigModal" hidden role="dialog" aria-modal="true" aria-labelledby="sigTitle">
+    <div class="sig-sheet">
+      <div class="sig-head">
+        <div><strong id="sigTitle">Firma</strong><small id="sigSub"></small></div>
+        <button class="btn ghost sm" id="sigClear">Borrar</button>
+      </div>
+      <div class="sig-pad-wrap"><canvas id="sigCanvas"></canvas><span class="sig-line"></span><span class="sig-ph" id="sigPh">Firme aquí con el dedo</span></div>
+      <p class="help center">Consejo: gire el celular en horizontal para tener más espacio.</p>
+      <div class="sig-foot">
+        <button class="btn ghost lg" id="sigCancel">Cancelar</button>
+        <button class="btn primary lg" id="sigSave">Guardar firma</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL EXPORTAR ============ -->
+  <div class="modal" id="exportModal" hidden role="dialog" aria-modal="true" aria-labelledby="expTitle">
+    <div class="sheet">
+      <div class="sheet-head"><h3 id="expTitle">Generar y enviar</h3><button class="icon-btn dark" data-close aria-label="Cerrar">✕</button></div>
+      <div id="expWarn" class="warn" hidden></div>
+      <div id="expStatus" class="exp-status">Preparando archivos…</div>
+      <div class="exp-group">
+        <p class="exp-label">Enviar como archivo adjunto (WhatsApp, Gmail, Outlook…)</p>
+        <button class="btn primary lg block" data-share="pdf" disabled><svg><use href="#i-share"/></svg>Enviar PDF</button>
+        <button class="btn primary-soft lg block" data-share="both" disabled><svg><use href="#i-share"/></svg>Enviar PDF + respaldo JSON</button>
+        <button class="btn ghost lg block" data-share="json" disabled><svg><use href="#i-share"/></svg>Enviar solo respaldo JSON</button>
+      </div>
+      <div class="exp-group">
+        <p class="exp-label">Guardar en el dispositivo</p>
+        <div class="row2">
+          <button class="btn ghost" data-dl="pdf" disabled><svg><use href="#i-down"/></svg>Descargar PDF</button>
+          <button class="btn ghost" data-dl="json" disabled><svg><use href="#i-down"/></svg>Descargar JSON</button>
+        </div>
+      </div>
+      <div id="expFallback" class="fallback" hidden>
+        <p>Este navegador no permite adjuntar archivos directamente. Los archivos ya se descargaron: abra WhatsApp o su correo y adjúntelos desde <b>Descargas</b>.</p>
+        <div class="row2">
+          <a class="btn ghost" id="lnkWa" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Abrir WhatsApp</a>
+          <a class="btn ghost" id="lnkMail"><svg><use href="#i-mail"/></svg>Abrir correo</a>
+        </div>
+      </div>
+      <p class="help small" id="expNote">En el menú para compartir elija WhatsApp, Gmail u Outlook. Si el teléfono no admite archivos .json, el respaldo se adjunta como <b>.json.txt</b>; contiene el mismo JSON y se importa igual en la app.</p>
+    </div>
+  </div>
+
+  <!-- ============ MODAL GUÍA ============ -->
+  <div class="modal" id="guideModal" hidden role="dialog" aria-modal="true" aria-labelledby="guideTitle">
+    <div class="sheet tall">
+      <div class="sheet-head"><h3 id="guideTitle">Simulacro de evacuación por sismo: paso a paso</h3><button class="icon-btn dark" data-close aria-label="Cerrar">✕</button></div>
+      <div class="legend">
+        <span class="role r-todas">Todas las personas</span>
+        <span class="role r-lider">Líder de la emergencia</span>
+        <span class="role r-obs">Observador (tiempos)</span>
+      </div>
+      <div id="guideSteps" class="guide"></div>
+      <div class="real-alert"><b>En cualquier momento: lesión o emergencia real.</b> El brigadista dice «emergencia real» y se suspende el ejercicio.</div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL CONFIGURACIÓN ============ -->
+  <div class="modal" id="settingsModal" hidden role="dialog" aria-modal="true" aria-labelledby="setTitle">
+    <div class="sheet">
+      <div class="sheet-head"><h3 id="setTitle">Configuración</h3><button class="icon-btn dark" data-close aria-label="Cerrar">✕</button></div>
+      <div class="field"><label for="sEmpresa">Empresa (encabezado del PDF)</label><input id="sEmpresa"></div>
+      <div class="field">
+        <label>Logo para el PDF (opcional)</label>
+        <div class="logo-row">
+          <div class="logo-prev" id="logoPrev">Sin logo</div>
+          <div class="logo-btns">
+            <label class="btn ghost sm" for="fileLogo"><svg><use href="#i-img"/></svg>Cargar logo</label>
+            <input type="file" id="fileLogo" accept="image/*" hidden>
+            <button class="btn ghost sm" id="btnLogoDel">Quitar</button>
+          </div>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label for="sEval">Evaluador por defecto</label><input id="sEval"></div>
+        <div class="field"><label for="sCargo">Cargo por defecto</label><input id="sCargo"></div>
+      </div>
+      <button class="btn primary lg block" id="btnSaveSettings">Guardar</button>
+      <p class="help small">Los datos y fotos se guardan solo en este celular. Haga respaldo JSON de cada evaluación para no perderla si borra los datos del navegador.</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="jspdf.umd.min.js" defer></script>
+  <script src="jspdf.plugin.autotable.min.js" defer></script>
+  <script src="config.js" defer></script>
+  <script src="pdf.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

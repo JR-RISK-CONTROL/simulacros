@@ -1,0 +1,17 @@
+{
+  "name": "Evaluación de Simulacro de Evacuación",
+  "short_name": "Simulacros",
+  "description": "Formato de evaluación de simulacros: cronometría, lista de chequeo, fotos, firmas, PDF y respaldo JSON.",
+  "lang": "es-CO",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F2F4F0",
+  "theme_color": "#1F2326",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
